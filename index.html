@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            position: relative;
         }
 
         /* Custom Scrollbar */
@@ -57,12 +58,35 @@
             font-size: 1.5rem;
         }
 
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            background-color: transparent;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 1rem 0;
+        }
+
+        .nav a {
+            color: #b2bec3;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ffffff;
+        }
+
         .intro-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 6rem 0;
             position: relative;
+            text-align: left;
         }
 
         .intro-text {
@@ -103,13 +127,21 @@
 
         .intro-image {
             flex: 1;
-            text-align: right;
+            text-align: center;
             max-width: 50%;
+            position: relative;
         }
 
         .intro-image img {
             max-width: 100%;
             border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: rotateY(10deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 0.3px solid rgba(255, 255, 255, 0.3);
         }
 
         .product-section {
@@ -119,7 +151,10 @@
             margin-bottom: 3rem;
             color: #dfe6e9;
             text-align: center;
-            border: 0.3px solid rgba(255, 255, 255, 0.3);
+            border: 0.1rem solid rgba(0, 100, 0, 0.5);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .product-section h2 {
@@ -144,6 +179,9 @@
             text-align: center;
             flex-wrap: wrap;
             gap: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .feature {
@@ -151,7 +189,7 @@
             padding: 2rem;
             background: #0d0d14;
             border-radius: 1rem;
-            border: 0.3px solid rgba(255, 255, 255, 0.3);
+            border: 0.1rem solid rgba(0, 100, 0, 0.5);
             max-width: 250px;
             flex: 1;
         }
@@ -178,7 +216,8 @@
             text-align: center;
             border-radius: 5rem;
             margin-top: 3rem;
-            border: 0.3px solid rgba(255, 255, 255, 0.3);
+            border: 0.1rem solid rgba(0, 100, 0, 0.5);
+            margin-bottom: 10px;
         }
 
         .footer .info h3 {
@@ -217,7 +256,7 @@
         .sphere {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(255,255,255,0));
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
             filter: blur(50px);
             animation: float 8s ease-in-out infinite;
         }
@@ -341,7 +380,6 @@
 </head>
 <body>
 
-    <!-- Glowing Spheres Background -->
     <div class="glowing-spheres">
         <div class="sphere"></div>
         <div class="sphere"></div>
@@ -354,21 +392,23 @@
         <div class="sphere"></div>
     </div>
 
-    <!-- Header -->
+    <svg class="grid-overlay" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="20%" x2="100%" y2="20%" class="grid-line"></line>
+        <line x1="0" y1="80%" x2="100%" y2="80%" class="grid-line"></line>
+        <line x1="20%" y1="0" x2="20%" y2="100%" class="grid-line"></line>
+        <line x1="80%" y1="0" x2="80%" y2="100%" class="grid-line"></line>
+    </svg>
+
     <header class="header">
         <h1>HEAD<span>HUNTER</span></h1>
         <p>The Ultimate Roblox Client-Side Executor</p>
     </header>
 
-    <!-- Navigation -->
-    <nav class="flex justify-center mb-8">
-        <ul class="flex space-x-8 text-lg text-white">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Discord</a></li>
-        </ul>
+    <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Discord</a>
     </nav>
 
-    <!-- Introduction Section -->
     <section class="intro-section container">
         <div class="intro-text">
             <h2>Introducing Headhunter V4</h2>
@@ -380,13 +420,11 @@
         </div>
     </section>
 
-    <!-- Product Section -->
     <section class="product-section">
         <h2>About Headhunter</h2>
         <p>Headhunter is a powerful and advanced Roblox script executor, optimized to work seamlessly even against Hyperion 5.0. Headhunter V4 will start development soon.</p>
     </section>
 
-    <!-- Features Section -->
     <section class="features-section container">
         <div class="feature">
             <h3>Stunning Design</h3>
@@ -406,7 +444,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="info">
             <h3>Information</h3>
@@ -417,14 +454,6 @@
             <p>Powered by Headhunter Dev Team <br> legal@headhunter.gg</p>
         </div>
     </footer>
-
-    <!-- Grid Overlay -->
-    <svg class="grid-overlay" xmlns="http://www.w3.org/2000/svg">
-        <line x1="0" y1="20%" x2="100%" y2="20%" class="grid-line"></line>
-        <line x1="0" y1="80%" x2="100%" y2="80%" class="grid-line"></line>
-        <line x1="20%" y1="0" x2="20%" y2="100%" class="grid-line"></line>
-        <line x1="80%" y1="0" x2="80%" y2="100%" class="grid-line"></line>
-    </svg>
 
     <script>
         function adjustLayout() {
@@ -437,11 +466,24 @@
                 } else {
                     el.style.maxWidth = '1200px';
                 }
+                el.style.margin = '0 auto';
             });
         }
 
+        function expandBackground() {
+            const spheres = document.querySelector('.glowing-spheres');
+            const gridOverlay = document.querySelector('.grid-overlay');
+            const bodyHeight = document.body.scrollHeight;
+
+            spheres.style.height = bodyHeight + 'px';
+            gridOverlay.style.height = bodyHeight + 'px';
+        }
+
         window.addEventListener('resize', adjustLayout);
-        window.addEventListener('load', adjustLayout);
+        window.addEventListener('load', () => {
+            adjustLayout();
+            expandBackground();
+        });
     </script>
 
 </body>
