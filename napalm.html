@@ -1,0 +1,512 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napalm</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1273545638734336123/1273610977807564800/image.png?ex=66bf3e27&is=66bdeca7&hm=900d999b1a40426ba81045afc92e4f2ef080d7dd3cd5dc589370c56598d564e6&=&format=webp&quality=lossless">
+	<meta name="theme-color" content="#ff0000">
+	<meta property="og:title" content="Napalm Stealthy Toolbar Cheat">
+	<meta property="og:description" content="Napalm is a ToolBar Cheat, focused on undetectable cheating with advanced C++ features.">
+	<meta property="og:image" content="https://media.discordapp.net/attachments/1273545638734336123/1273610977807564800/image.png?ex=66bf3e27&is=66bdeca7&hm=900d999b1a40426ba81045afc92e4f2ef080d7dd3cd5dc589370c56598d564e6&=&format=webp&quality=lossless">
+	<meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Lexend+Deca:wght@300;700&family=Oswald:wght@700&display=swap">
+    <style>
+        body {
+            background-color: #0a0a1a;
+            font-family: 'Manrope', sans-serif;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #15151e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ff0000;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 0 1rem 0;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ff0000;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .header p {
+            color: #b2bec3;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            background-color: transparent;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 1rem 0;
+        }
+
+        .nav a {
+            color: #b2bec3;
+            font-size: 1.25rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #ff0000;
+        }
+
+        .intro-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6rem 0;
+            position: relative;
+            text-align: left;
+        }
+
+        .intro-text {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .intro-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff0000;
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #b2bec3;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text button {
+            background-color: #ff0000;
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 5rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .intro-text button:hover {
+            background-color: #cc0000;
+        }
+
+        .intro-image {
+            flex: 1;
+            text-align: center;
+            max-width: 50%;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .intro-image img:hover {
+            transform: rotateY(20deg) rotateX(20deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 0.3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .product-section {
+            background-color: #0d0d14;
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 3rem;
+            color: #dfe6e9;
+            text-align: center;
+            border: 0.1rem solid rgba(255, 0, 0, 0.5);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff0000;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-section {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: #0d0d14;
+            border-radius: 1rem;
+            border: 0.1rem solid rgba(255, 0, 0, 0.5);
+            max-width: 250px;
+            flex: 1;
+        }
+
+        .feature h3 {
+            color: #ff0000;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            font-size: 1.125rem;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+            background: #0d0d14;
+            color: #636e72;
+            font-size: 0.9rem;
+            text-align: center;
+            border-radius: 2rem;
+            margin-top: 3rem;
+            border: 0.1rem solid rgba(255, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .footer .info h3 {
+            font-size: 1rem;
+            color: #ff0000;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            display: block;
+            color: #b2bec3;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #ff0000;
+        }
+
+        .footer .powered-by {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .glowing-spheres {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .sphere {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+            filter: blur(50px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .sphere:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 15%;
+            left: 10%;
+            background-color: #ff0000;
+        }
+
+        .sphere:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 70%;
+            background-color: #cc0000;
+        }
+
+        .sphere:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            top: 60%;
+            left: 20%;
+            background-color: #ff3300;
+        }
+
+        .sphere:nth-child(4) {
+            width: 300px;
+            height: 300px;
+            top: 20%;
+            right: 10%;
+            background-color: #ff0000;
+        }
+
+        .sphere:nth-child(5) {
+            width: 400px;
+            height: 400px;
+            bottom: 20%;
+            left: 40%;
+            background-color: #cc0000;
+        }
+
+        .sphere:nth-child(6) {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            right: 30%;
+            background-color: #ff3300;
+        }
+
+        .sphere:nth-child(7) {
+            width: 250px;
+            height: 250px;
+            top: 10%;
+            right: 30%;
+            background-color: #ff3300;
+        }
+
+        .sphere:nth-child(8) {
+            width: 250px;
+            height: 250px;
+            bottom: 40%;
+            right: 50%;
+            background-color: #ff3300;
+        }
+
+        .sphere:nth-child(9) {
+            width: 250px;
+            height: 250px;
+            top: 60%;
+            left: 60%;
+            background-color: #ff3300;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+            opacity: 0.1;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .intro-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .intro-text,
+            .intro-image {
+                max-width: 100%;
+            }
+
+            .features-section {
+                flex-direction: column;
+            }
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .grid-line {
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glowing-spheres">
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+    </div>
+
+    <div class="noise-overlay"></div>
+
+    <svg class="grid-overlay" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="20%" x2="100%" y2="20%" class="grid-line"></line>
+        <line x1="0" y1="80%" x2="100%" y2="80%" class="grid-line"></line>
+        <line x1="20%" y1="0" x2="20%" y2="100%" class="grid-line"></line>
+        <line x1="80%" y1="0" x2="80%" y2="100%" class="grid-line"></line>
+    </svg>
+
+    <header class="header">
+        <h1>NAPALM</h1>
+        <p>The Ultimate Stealthy Toolbar Hack</p>
+    </header>
+
+    <nav class="nav">
+        <a href="#">Home</a>
+        <a href="https://discord.gg/q9rRBUWuDb">Discord</a>
+        <a href="index.html">Headhunter</a>
+    </nav>
+
+    <section class="intro-section container">
+        <div class="intro-text">
+            <h2>Introducing Napalm</h2>
+            <p>Napalm is a toolbar hack that uses no Lua and is a very stealthy cheat, which didn't get hit by the banwave. Napalm lets you cheat on games without having to load a full executor. It's written in C++ and focuses on staying as stealthy as possible while providing extensive features.</p>
+            <button onclick="window.location.href='https://discord.gg/q9rRBUWuDb'">Join Discord</button>
+        </div>
+        <div class="intro-image">
+            <img src="napalm.png" alt="Napalm Image">
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2>About Napalm</h2>
+        <p>Napalm is a powerful toolbar hack optimized for stealth. It operates entirely outside of Lua, making it nearly undetectable. Whether you're looking to cheat discreetly or avoid detection, Napalm provides the ultimate stealth experience.</p>
+    </section>
+
+    <section class="features-section container">
+        <div class="feature">
+            <h3>Stealth Mode</h3>
+            <p>Napalm is built with stealth in mind, ensuring it remains undetected even during banwaves.</p>
+        </div>
+        <div class="feature">
+            <h3>Performance</h3>
+            <p>Written in C++, Napalm delivers unmatched speed and efficiency without compromising safety.</p>
+        </div>
+        <div class="feature">
+            <h3>Easy to Use</h3>
+            <p>Napalm's toolbar design makes it incredibly easy to access and use cheats without the need for a full executor.</p>
+        </div>
+        <div class="feature">
+            <h3>Security</h3>
+            <p>Napalm ensures your gaming experience is secure, allowing you to enjoy the features without worrying about bans.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="info">
+            <h3>Information</h3>
+            <a href="#">Home</a>
+            <a href="https://discord.gg/q9rRBUWuDb">Discord</a>
+        </div>
+        <div class="powered-by">
+            <p>Powered by Napalm Dev Team <br> legal@napalm.gg</p>
+        </div>
+    </footer>
+
+    <script>
+        function adjustLayout() {
+            const width = window.innerWidth;
+            const elements = document.querySelectorAll('.container, .product-section, .features-section, .footer');
+
+            elements.forEach(el => {
+                if (width < 1200) {
+                    el.style.maxWidth = (width - 40) + 'px';
+                } else {
+                    el.style.maxWidth = '1200px';
+                }
+                el.style.margin = '0 auto';
+            });
+        }
+
+        function expandBackground() {
+            const spheres = document.querySelector('.glowing-spheres');
+            const gridOverlay = document.querySelector('.grid-overlay');
+            const noiseOverlay = document.querySelector('.noise-overlay');
+            const bodyHeight = document.body.scrollHeight;
+
+            spheres.style.height = bodyHeight + 'px';
+            gridOverlay.style.height = bodyHeight + 'px';
+            noiseOverlay.style.height = bodyHeight + 'px';
+        }
+
+        window.addEventListener('resize', adjustLayout);
+        window.addEventListener('load', () => {
+            adjustLayout();
+            expandBackground();
+        });
+    </script>
+
+</body>
+</html>
