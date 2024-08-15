@@ -1,4 +1,4 @@
-# Rio Site
+# HeadHunter's & Napalm's Site
 
 The MIT License (MIT)
 
